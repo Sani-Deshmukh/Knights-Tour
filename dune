@@ -1,0 +1,42 @@
+(library
+  (name final)
+  (modules
+    storage
+    board
+    utils
+    search)
+  (libraries str))
+
+(executable
+  (name interact)
+  (libraries final)
+  (modules interact)
+  (modes (byte exe)))
+
+(executable
+  (name knights_tour)
+  (libraries final)
+  (modules knights_tour)
+  (modes (byte exe)))
+
+(executable
+  (name test_storage)
+  (libraries final ounit2)
+  (modules test_storage)
+  (modes (byte exe)))
+
+(executable
+  (name test_board)
+  (libraries final ounit2)
+  (modules test_board)
+  (modes (byte exe)))
+
+(executable
+  (name test_search)
+  (libraries final ounit2)
+  (modules test_search)
+  (modes (byte exe)))
+
+(env
+  (dev
+    (flags (:standard -w A-40-67 -warn-error -A))))
